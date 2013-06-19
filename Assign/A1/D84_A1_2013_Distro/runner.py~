@@ -1,0 +1,3 @@
+from AI_search_core_GL import *
+initGame(1522,5,1)
+doSearch(0)

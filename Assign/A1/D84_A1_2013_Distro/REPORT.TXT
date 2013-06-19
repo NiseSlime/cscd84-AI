@@ -1,0 +1,131 @@
+
+Assignment 1 - Search 
+
+This assignment is worth:
+
+10 AIUs (Artificial Intelligence Units)
+toward the 40% assignment component of your final
+mark.
+
+________________________________________________
+
+Student Name (last, first): SYED JAUDAT
+
+Student number: 997054100
+
+UTORid: syedjaud
+
+READ THIS AND SIGN YOUR NAME AT THE END:
+
+ I certify that I have read the UTSC code on academic
+honesty and plaguarism. All work submitted as part
+of this assignment is my own.
+
+	Signed: JAUDAT SYED
+
+
+(-5 marks for failing to provide the identifying
+ information requested above)
+________________________________________________
+
+Answer the following questions. Be concise and clear
+but explain carefully when needed.
+
+1 .- (1 marks) Of BFS and DNF, which search algorithm yields
+     the best results? (i.e. which is more likely
+     to get the mouse to the cheese safely before
+     being eaten?)
+     
+     BFS because it will get the closest distance cheese 
+
+
+2 .- (1 marks) Does this mean that in general BFS is a better
+     search algorithm? (yes/no and give reasons to
+     support your answer based on your observations)
+
+     No, becauseif the cheese is far away then there is a chance that the DFS will find it first as the BFS will start by searching all the nodes closest the starting node
+
+3 .- (2 marks) Describe the heuristic function you used for
+     A* search. Why is this heuristic admissible?
+
+     The heuristic function is used to get the manhattan distance to the closest cheese. Since it is the manhattan distance it must be an underestimate for the time to the goal.
+
+4 .- (1 marks) Explain how your heuristic function accounts for
+     the presence of multiple cheeses.
+
+     We loop through all the cheese in the maze and then get the manhattan distance to the closest cheese so that the mouse can go that way.
+
+5 .- (1 marks) Is A* equivalent to BFS for this problem? or is
+     it better/worse? explain your answer based on 
+     your observations.
+
+     A* is usually better as it makes smart decisions about which node to go to based on how close it is to the cheese
+
+6 .- (2 marks) Describe your heuristic function for A*-nokitty.
+     How does it work? what factors are considered
+     into the cost function? is it admissible?
+
+     The way the heuristic function works is that it takes into account the distance the cat is from the mouse and based on that it adds an additional cost. Also the closer the mouse is to the cheese it reduces the overall cost. This makes the algorithm admissible as the mouse gets closer to the cat its cost increases to the point where if the mouse is eaten then the cost is infinity. Also the closer the mouse is to the cheese the smaller its cost is as we decrease the cost so it is always an underestimate.
+
+7 .- (2 marks) What is the largest limitation of the search
+     algorithms implemented in this assignment?
+     (i.e. is there anything we are missing that
+      could lead to a smarter mouse?) - this is
+     a more or less open question, but we talked 
+     about it in lecture!
+
+     Our Mouse is reactive in nature,if it was predictive i.e. it could predict which ways the cats would move and based on that it could make its move, this would make the mouse agent smarter.
+
+_____________________________________________________
+
+Mark with an 'x' where appropriate. If something is only
+working partially, briefly describe what works, what
+doesn't work, or what problems exist.
+	
+	Complete/Working	Partial		Not done
+
+DFS   X
+
+BFS   X
+
+A*    X
+
+A*NK  X
+
+_____________________________________________________
+
+Marking:
+
+(10 marks) Correctly implementing BFS - the search
+           runs and produces the expected search
+           behaviour.
+
+
+
+(10 marks) Correctly implementing DFS - the search
+           runs and produces the expected behaviour.
+
+
+(5 marks)  A* cost function is implemented, reasonable,
+           and admissible.
+
+(10 marks) Correctly implementing A* search - the search
+           runs and produces the expected behaviour.
+
+(15 marks) Implemented a **clever**  A*-nokitty heuristic
+           and a working A*-nokitty search. The search
+           should produce a smarter mouse than all of
+           BFS/DFS/vanilla A*.
+
+           The heuristic should accounts for known game 
+           factors that affect the mouse's chance of success.
+
+           (to be marked competitively - smartest mouse
+            in the class earns full marks)
+
+(10 marks) Answers in this report file
+
+
+Total for A1:       / out of 60
+
+

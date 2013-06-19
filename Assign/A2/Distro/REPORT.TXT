@@ -1,0 +1,183 @@
+CSC D84 - Artificial Intelligence, Winter 2013
+
+Assignment 2 - Local Search 
+
+This assignment is worth:
+
+5 AIUs (Artificial Intelligence Units)
+toward the 40% assignment component of your final
+mark.
+
+________________________________________________
+
+Student Name (last, first): Syed Jaudat
+
+Student number: 997054100
+
+UTORid: syedjaud
+
+READ THIS AND SIGN YOUR NAME AT THE END:
+
+ I certify that I have read the UTSC code on academic
+honesty and plaguarism. All work submitted as part
+of this assignment is my own.
+
+	Signed: Jaudat Syed
+
+
+(-5 marks for failing to provide the identifying
+ information requested above)
+________________________________________________
+
+Answer the following questions. Be concise and clear
+but explain carefully when needed.
+
+For experiment 1)
+
+	- What is the average cost of the initial solution?
+		189942.418638
+
+	- What is the average cost of the final solution
+	  over your five runs?
+		138964.777045
+
+	- What is the improvement factor?
+	  (average solution cost / average initial cost)
+		0.73161528657
+
+	- Does the number of input points have a strong
+          influence on the final location of the medians?
+          (i.e. are the solutions all similar and reasonable?)
+		No they final solutions were all similar with the max final solution being 144164.184629
+		and the min being 136426.09292, which isn't that big of a difference.
+
+
+For experiment 2)
+
+	- Record the initial seed values used:
+		100, 200, 300, 400, 500
+	- What is the improvement factor for each run?
+		100: 0.8693697239 
+		200: 0.82389430466
+		300: 0.70706610261
+		400: 0.71852158566
+		500: 0.74005976147
+	- What is the average improvement factor?
+		Average Solution Cost: 151033.133326
+		Average Initial Cost: 197083.801423
+		Average Improvement Factor: 0.76633965975
+	- Is it stable? (i.e. does the initial random
+          seed strongly influence the result?
+		Yes it is stable, the initial random seed does not effect the final solution too much with 
+		the max final solution being 155028.708268 and the min being 146847.29339 which are both 
+		relatively close 
+
+For experiment 3)
+
+	- What are the improvement factors for each temperature?
+		500: 0.78007851154
+		1500: 0.73184496764
+		5000: 0.82399654593
+	- Does the temperature have a strong influence on the goodness
+          of the final solution?
+		No it doesnot, I have not found any pattern or relationship between the temperature
+		and the final solution
+
+For experiment 4)
+
+	- What are the improvement factors for each decay factor?
+		0.999: 0.50146637899
+		0.99: 0.6959569484
+		0.9: 0.78914384655
+	- Does the decay factor strongly influence the goodness of the
+	  final solution?
+		No it doesn't, again their was no relationship between decay and the quality
+		of our final solution
+
+From 3) and 4)
+
+	- Does deterministic annealing (with suitable temperature and
+	  decay) improve the results of the search process?
+	  if so, by how much? (in % please)
+		It does improve the results
+		Average DA Final Solution: (141465.747057 + 138487.911386 + 135857.26432 + 135272.283827 + 134691.475494 + 136601.872567) / 6
+								  = 137062.759109
+		LS Final Solution with Seed 289 and the runtime enviroment same as DA: 137700.776083
+		Percentage Improvement:  ( 137700.776083 - 137062.759109) / 137700.776083 * 100 = 0.46333578658
+From 5) and 6)
+	
+	- Record the initial seeds used:
+		100, 200, 300
+	- Record the final solution cost for your three DA runs
+		100: 130498.834297
+		200: 138459.434549
+		300: 138863.575492
+	- Record the final solution cost for simple local search
+		119865.852958
+	- Overall, does DA improve the solution in a meaningful way?
+	  (give the largest observed % improvement, whether it 
+           is positive or negative)
+		Percentage Change = (119865.852958 - 130498.834297) / 119865.852958 * 100 = -8.87073430556
+		Therefore the difference was of -8.87% and DA did not improve on local search
+From 1) through 6)
+
+	- Does local search produce reasonably good results on this
+	  problem?
+		Yes
+	- Is Deterministic Annealing worth the extra computation time
+	  on this particular problem?
+		No, it isn't as it did not make a meaningful improvement on our results 
+From 2) through 7)
+
+	- Record the initial seeds used:
+		-100, -200, -300
+	- Record the final cost for the solutions found by DA
+		-100: 112857.485135
+		-200: 110385.444156
+		-300: 112842.761876
+	- Record the final cost of the local search solution
+		115119.920206
+	- What is the % improvement (positive or negative) of the
+	  DA solutions compared to the local search solutions?
+		(115119.920206 - 110385.444156) / 115119.920206 * 100 = 4.11264709142 
+		is the percentage improvement that DA solutions improved on LS solution.
+Finally:
+
+	- How would you modify the cost function so that, instead
+	  of simple Euclidean distance from a point on the GTA
+	  map to one of the possible restaurant locations, your
+          cost considers the time it would take to travel from
+          that point to the closest restaurant?
+		It would use the manhattan distance instead of euclidean distance. This will mean we will have to travel
+		through a grid like path to reach our destination, and this is similar to Toronto's road layout
+_____________________________________________________
+
+Mark with an 'x' where appropriate. If something is only
+working partially, briefly describe what works, what
+doesn't work, or what problems exist.
+	
+		Complete/Working	Partial		Not done
+
+Local Search   X
+
+D. Annealing   X
+_____________________________________________________
+
+Marking:
+
+(10 marks) Correctly implementing local search - it
+           progressively improves results and yields
+           a reasonable final solution.
+
+(10 marks) Correctly implementing Deterministic
+           Annealing. The search can explore states
+           that appear worse, but eventually reaches
+           a reasonable solution. Temperature
+           decay is managed appropriately
+
+(20 marks) The answers in this report
+
+
+Total for A1:       / out of 40
+
+

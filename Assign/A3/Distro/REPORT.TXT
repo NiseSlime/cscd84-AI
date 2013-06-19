@@ -1,0 +1,112 @@
+CSC D84 - Artificial Intelligence, Winter 2013
+
+Assignment 3 - MiniMax and Game Trees 
+
+This assignment is worth:
+
+15 AIUs (Artificial Intelligence Units)
+toward the 40% assignment component of your final
+mark.
+
+________________________________________________
+
+Student Name (last, first):
+
+Student number: Jaudta Syed
+
+UTORid: syedjaud
+
+READ THIS AND SIGN YOUR NAME AT THE END:
+
+ I certify that I have read the UTSC code on academic
+honesty and plaguarism. All work submitted as part
+of this assignment is my own.
+
+	Signed: JAUDAT SYED
+
+
+(-5 marks for failing to provide the identifying
+ information requested above)
+________________________________________________
+
+Answer the following questions. Be concise and clear
+but explain carefully when needed.
+
+1 .- (3 marks) Explain the design of your utility function.
+     Describe all the factors that influence its value, and
+     how their influence was evaluated and integrated into
+     a single, meaningful value. Convince us that your utility
+     makes sense!
+
+     The things that factor into the utility function are the distance of the cat from the mouse and the distance of cheese from the mouse. I do (10000-cheese_dist)-(10000-cat_dist). The reason for this is that we want the minimum distance to the cheese to have the maximum weight and we want the minimum distance to the cat to have the least weight. This way for example if the cheese is closer then (10000-dist_cheese) is larger. Likewise -(10000-dist_cat) is smaller the closer the cat is to the mouse. Therefore weend up with a utility that the mouse would want to max to win the game while the cat would want to min this utility to eat the mouse.
+
+2 .- (3 marks) Ignoring computation time, what is the effect of
+     search depth (number of plyes) on the chances of the mouse
+     winning the game. 
+
+     The greater the depth the more accurate the search and the higher the chances.
+
+3 .- (3 marks) What situations will cause your mouse to lose?
+     can these be fixed either with the utility function, or
+     by changing the search depth? if so, how?
+
+     Sometimes the mouse will get stuck and start dancing with the cat where both of them start making the same moves over and over again. This i think can be improved if we take euclidean distance instead of manhattan distance and if we have more then one successors with the same utility then it picks randomly from them rather then always the first one. Sometimes the mouse gets stuck if it is trapped between three walls. The above solutions could help with that. Also we could make it more expensive to go to a node with three walls if there is no cheese in it.
+
+4 .- (3 marks) Does the utility function favour the mouse?
+     (yes/no, and a reasonable explanation of why)
+
+     No it doesnot, since it just subtracts the two distances, Therefore it is just a rule of thumb and doesnot give higher presidence to the mouse. Also the point of the utility function is that if you max it then it is the best for player one while if you min it then it is th best for player 2. If we take a look at my utility function we have the distance between mouse and cat in the negative. Therefore when it is the cats turn and they minimize the utility, they choose the the path that mazimizes their utility i.e. going towards mouse
+
+5 .- (3 marks) Can the mouse be made unbeatable by having an
+     optimal utility function?
+
+     No. Because in addition to the utility function, the depth of the search by the minimax algorithm is also an important consideration to get good results. Therefore just having a good utility function is not good enough. 
+
+6 .- (2 bonus marks) Could a human playing the game in place
+      of the mouse do better than your code? (yes, no, and
+      a reasonable explanation of why)
+
+      yes. This is because my utility function takes into account the nearest cheese and cat since they represent the biggest oppurtunity or threat depending on which. A human will be able to factor in other factors such as other cheese and cat positions. Also because of computation limitations my minimax can not go too deep into the graph, while a human being when looking at the screen can go much deeper into the graph and find other optimal solutions that my algorithm could only find if it has to processing power or time to go that deep.
+________________________________________________________________
+
+Mark with an 'x' where appropriate. If something is only
+working partially, briefly describe what works, what
+doesn't work, or what problems exist.
+	
+	Complete/Working	Partial		Not done
+
+Utility
+ function    X
+
+MiniMax      X
+
+Alpha/Beta
+ pruning     X
+_____________________________________________________
+
+Marking:
+
+(15 marks) Implemented a non-trivial, clever, and
+           effective utility function. It allows the
+           mouse to win the game often. This will be
+           marked **competitively**. The best utility
+           function will get full marks.
+
+(15 marks) Correctly implementing MiniMax. The algorithm
+           should produce the expected behaviour. The
+           mouse should take a reasonable path to the
+           cheese and avoid cats. The cats will try to
+           catch the mouse. Mouse is not easy to catch.
+
+(15 marks) Implemented alpha-beta pruning. The algorithm
+           significantly reduces the amount of search
+           while producing identical results as those
+           from standard MiniMax 
+
+(15 marks) Answers in this report file
+
+(2 bonus)  Bonus!
+
+Total for A1:       / out of 60
+
+

@@ -1,0 +1,197 @@
+CSC D84 - Artificial Intelligence, Winter 2013
+
+Assignment 4 - Reinforcement Learning - Q Learning
+
+This assignment is worth:
+
+10 AIUs (Artificial Intelligence Units)
+toward the 40% assignment component of your final
+mark.
+
+________________________________________________
+
+Student Name (last, first): Syed Jaudat
+
+Student number: 997054100
+
+UTORid: syedjaud
+
+READ THIS AND SIGN YOUR NAME AT THE END:
+
+ I certify that I have read the UTSC code on academic
+honesty and plaguarism. All work submitted as part
+of this assignment is my own.
+
+	Signed: Jaudat Syed
+
+
+(-5 marks for failing to provide the identifying
+ information requested above)
+________________________________________________
+
+Answer the following questions. Be concise and clear
+but explain carefully when needed.
+
+1 .- (5 marks) Explain your reward function. What game elements
+      are used, and why you think this is a good reward function
+      for this problem.
+
+      My reward fuction is (10000-dist2cheese)-(10000-dist2cat). this is because the closer the 
+      mouse is to the cheese the larger (10000-dist2cheese) is. At the same time the further the
+      mouse is from cat the better -(10000-dist2cat) will be. So the resulting algorithm tries to find 
+      places that are closer to the cheese and further from the cat. 
+
+2 .- (10 marks) These are multiple experiments (once you are sure your 
+     QLearning code is working!) 
+
+     * IMPORTANT! * For each training run, SAVE the Qtable
+     you will re-use the Qtables later.
+
+     # Experiment 1, 10000 training rounds
+     initGame(1522,1)
+     doTrain(10000,20)
+     # SAVE YOUR Q TABLE!
+     doGame()
+ 
+     Run at least 50 rounds of the game. 
+
+     Record the mouse winning rate:
+     (% of time the mouse wins)
+ 
+       9.67741935484
+
+     # Experiment 2
+     initGame(1522,1)
+     doTrain(100000,20)
+     # SAVE YOUR Q TABLE!
+     doGame()
+
+     Run at least 50 rounds of the game. 
+
+     Record the mouse winning rate:
+     (% of time the mouse wins)
+
+     52.6315789474
+
+     # Experiment 3
+     initGame(1522,1)
+     doTrain(1000000,20)
+     # SAVE YOUR Q TABLE!    <--- You have to submit this one as 'Qtable.pickle'
+     doGame()			   
+
+     Run at least 50 rounds of the game. 
+
+     Record the mouse winning rate:
+     (% of time the mouse wins)
+     69.5652173913
+
+     Would the mouse keep improving and become invincible if
+     you ran, say, 100,000,000 training rounds per batch?
+     
+     Yes given an infinate amount of time, space and processing power the mouse will achieve a 100% 
+     success rate. This is because we would have gone over all the possibilities and states and would
+     therefore know what actions to take. 
+
+4 .- (10 marks) 
+
+     Using the QTable for the training session with 1,000,000
+     training trials:
+
+     Record the mouse's winning rate for the following setups
+     after 50 rounds of the game
+     (NOTE: NO TRAINING THIS TIME AROUND. Re-use your Qtable)
+
+     # 1
+     initGame(4289,1)
+     doGame()
+	
+     Mouse Winning Rate:
+     44.5945945946
+
+     # 2
+     initGame(31415,1)
+     doGame()
+	
+     Mouse Winning Rate:
+     45.6790123457
+
+     # 3
+     initGame(3210,1)
+     doGame()
+	
+     Mouse Winning Rate:
+     52.688172043
+
+     Average winning rate:
+     47.6539263278
+
+     Explain the above numbers compared to the winning rates in 3),
+     and provide some insight as to what is going on. 
+
+     This is because we trained on a different seed. So the states in that seed were much 
+     more familiar to our mouse so we could get a better score. When we changed seeds the 
+     mouse encounters too many states that are unfamiliar to it therefore it ends up doing worse.
+
+5 .- (5 marks) Is Q-Learning a rasonable strategy for environments
+     that change constantly? discuss based on the above
+
+     Q-learning is a form of reinforcement learning whose main strength is that the agent has no
+     information of the model enviroment. However if the enviroment is constantly changing there
+     is high chance that the agent will be faced with a higher percentage of unknown states, so 
+     unless we can give a large amount of processing power for the training phase, we should use
+     not use Q-learning. 
+
+
+6 .- (5 marks) Discuss any practical limitations you can think of
+     that may make QLearning unsuitable for [some, which?] real
+     world settings.
+     The real world is much more complex then the one for this project.
+     The enviroment too is constantly changing, therefore the training must be very thorough if the agent
+     is to make good decisions most of the time. This however is not always possible as there are 
+     limitations of memory, time and processing power, and for a non-trivial cases Q-learning will take 
+     enourmous amounts of each.
+
+_____________________________________________________
+
+Mark with an 'x' where appropriate. If something is only
+working partially, briefly describe what works, what
+doesn't work, or what problems exist.
+	
+	Complete/Working	Partial		Not done
+
+QLearn      X
+ update
+
+reward      X
+ function
+
+Decide      X
+ action
+
+CRUNCHY (*)
+ if done,
+ describe
+ thoroughly
+ and be
+ ready to 
+ show me
+ your results
+ on the 16x16
+ grid
+_____________________________________________________
+
+Marking:
+
+(10 marks) Implemented QLearn update.
+
+(10 marks) Implemented a reasonable reward function
+
+(5 marks)  Implemented the function that chooses the
+           optimal action based on Qtable and
+           maze
+
+(35 marks) Answers in this report file
+
+Total for A1:       / out of 60
+
+
